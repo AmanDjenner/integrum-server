@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>“Status” screen</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<!-- non-scrolling headers for CHM and WebHelp--> 
+   <style type="text/css" media="screen">
+   body { 
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+   } 
+
+   /* Set the padding in the OUTER div for MSIE and CHM to prevent the 
+      width bug and the horizontal scrollbar bug from activating. */ 
+
+  #idcontent {    
+      width: 100%; 
+      padding: 0px !important; 
+      padding: 10px 15px 5px 10px; 
+   } 
+
+/* Set the padding in the INNER div for all other browsers. */ 
+
+  #innerdiv {    
+      padding: 5px !important;  
+      padding: 0px; 
+   } 
+
+    /* These styles are for the header, the print link 
+      and the navigation links. */
+
+    .topichead {
+       padding: 5px;
+    }
+    
+    .navlinks {
+      font-size: 1em;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:visited {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* These styles are dynamically assigned with Javascript. 
+    Since the media type is "screen", they do not apply for print */ 
+
+   html.nonscroll { 
+      overflow:hidden; 
+   } 
+   body.nonscroll {    
+      overflow:hidden; 
+      height:100%; 
+   } 
+   div.nonscroll { 
+      overflow:auto; 
+   } 
+
+/* Link styles */   
+a.topiclink {font-size:18px; color: #0066FF; text-decoration: none; }
+a.topiclink:visited {color: #0066FF; }
+a.topiclink:hover {color: #CC0000; text-decoration: underline; }
+a.weblink {color: blue; text-decoration: underline; }
+a.weblink:visited {color: blue; }
+a.weblink:hover {color: white; background-color: blue;}
+a.popuplink {color: red; text-decoration: none; border-bottom: 1px dashed;}
+a.popuplink:visited {color: red;}
+a.popuplink:hover {text-decoration: none; background-color: #ffff99;}
+a.filelink {color: green;  text-decoration: none; border-bottom: 1px dashed;}
+a.filelink:visited {color: green;}
+a.filelink:hover {text-decoration: none; background-color: #ffff99;}
+a.scriptlink {color: purple; text-decoration: none; border-bottom: 1px dashed; }
+a.scriptlink:visited {color: purple;}
+a.scriptlink:hover {text-decoration: none; background-color: #ffff99;}
+</style>
+<style TYPE="text/css" media="print">
+/* Hide navigation links and icons and add space between header and
+  text in the printed version. */
+     #idnav, .navicons { display:none;	}      
+     span.f_Heading1 { color: #000; }
+     .topichead { padding: 5px 5px 20px 5px; }
+   </style>
+<!-- jQuery framework and global WebHelp settings  -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+
+<!-- NS-Header and page initialization, only  required if there's a header -->
+<script type="text/javascript"> 
+function pageOffset(win)
+{
+    if(!win) win = window;
+    var pos = {left:0,top:0};
+
+    if(typeof win.pageXOffset != 'undefined')
+    {
+         // Mozilla/Netscape
+         pos.left = win.pageXOffset;
+         pos.top = win.pageYOffset;
+    }
+    else
+    {
+         var obj = (win.document.compatMode && win.document.compatMode == "CSS1Compat") ?
+         win.document.documentElement : win.document.body || null;
+
+         pos.left = obj.scrollLeft;
+         pos.top = obj.scrollTop;
+    }
+    return pos;
+}
+
+   function doResize() { 
+     var clheight, headheight;
+     if (self.innerHeight) // all except Explorer 
+     { clheight = self.innerHeight; } 
+     else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+     { clheight = document.documentElement.clientHeight; } 
+     else if (document.body) // other Explorers 
+     { clheight = document.body.clientHeight; } 
+     headheight = document.getElementById('idheader').clientHeight;
+     if (clheight < headheight ) {clheight = headheight + 1;}
+     document.getElementById('idcontent').style.height = clheight - document.getElementById('idheader').clientHeight +'px'; 
+   } 
+
+      function nsrInit() { 
+     contentbody = document.getElementById('idcontent'); 
+     if (contentbody) { 
+       aTop = pageOffset.top; //document.getElementById('body').scrollTop; 
+       contentbody.className = 'nonscroll'; 
+       document.getElementsByTagName('body')[0].className = 'nonscroll'; 
+       document.getElementsByTagName('html')[0].className = 'nonscroll'; 
+       window.onresize = doResize; 
+       doResize(); 
+       if (contentbody.scrollTo) { contentbody.scrollTo(aTop,0); }
+      } 
+   }
+   // Only initialize if CHM is not trying to print 
+   $(document).ready(function() {
+   var lastSlashPos = document.URL.lastIndexOf("/") > document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") : document.URL.lastIndexOf("\\");
+   if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4 ).toLowerCase() != "~hh" )
+   {
+    nsrInit();
+    }
+   });
+</script>
+ 
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "ekran-status.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<!-- Topic Header --> 
+<div id="idheader">
+<table style="width:100%; border-bottom: 5px solid #F4C700; border-spacing:0px; padding:5px; background:#4C4C4C">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">“Status” screen</span></h1>
+
+    </td>
+    <td style="text-align:right; width:180px; vertical-align:top">
+     <div id="help-max-close-section" style="float:right;padding-left:10px;width:70px; display:none">
+    <a href="#" id="help-maximize"onmouseover="document.images.maximize.src='b_maximize_yellow.png'" onmouseout="document.images.maximize.src='b_maximize_silver.png'"> 
+     <img name="maximize" src="b_maximize_silver.png" border="0" alt="Maximize" title="Maximize"></a>&nbsp;
+    <a href="#" id="help-close"onmouseover="document.images.close.src='b_close_yellow.png'" onmouseout="document.images.close.src='b_close_silver.png'"> 
+     <img name="close" src="b_close_silver.png" border="0" alt="Close" title="Close"></a>&nbsp;
+    </div>
+    <div style="float:right; min-width: 97px;">
+     <a href="okno-komentowania.html"onmouseover="document.images.previous.src='b_previous_yellow.png'" onmouseout="document.images.previous.src='b_previous_silver.png'"> 
+     <img name="previous" src="b_previous_silver.png" border="0" alt="Previous" title="Previous"></a>&nbsp;
+     <a href="ekran-powitalny.html"onmouseover="document.images.top.src='b_top_yellow.png'" onmouseout="document.images.top.src='b_top_silver.png'"> 
+     <img name="top" src="b_top_silver.png" border="0" alt="Top" title="Top"></a>&nbsp;
+     <a href="ekran-moduly-ethernetowe.html"onmouseover="document.images.next.src='b_next_yellow.png'" onmouseout="document.images.next.src='b_next_silver.png'"> 
+     <img name="next" src="b_next_silver.png" border="0" alt="Next" title="Next"></a>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- Topic Body --> 
+<div id="idcontent"><div id="innerdiv"> 
+<p class="p_opis"><span class="f_opis">The screen presents information about the INTEGRUM system status and allows you to manage licenses.</span></p>
+<p class="p_opis"><span class="f_opis">The <a href="pasek-menu.html" class="topiclink">Menu bar</a> is displayed at the top of the screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">System components</span><span class="f_opis5"> - information about the status of system components is presented with icons. How the status is presented is explained in the table below. Moving the cursor over the icon will display the following information:</span></p>
+<p class="p_opis4"><span class="f_opis4">if the component is working properly - version of the given component firmware,</span></p>
+<p class="p_opis4"><span class="f_opis4">if the component is not working - reported problems.</span></p>
+<p class="p_opis" style="margin: 0px 25px 10px 50px;"><span class="f_opis">The system components include:</span></p>
+<p class="p_opis4"><span class="f_opis4">INTGERUM Web - application allowing you to operate the INTEGRUM system,</span></p>
+<p class="p_opis4"><span class="f_opis4">INTEGRUM AppServer - intermediate component for communication between the other INTEGRUM system components,</span></p>
+<p class="p_opis4"><span class="f_opis4">INTEGRUM Server - program for data exchange between alarm control panels and INTEGRUM,</span></p>
+<p class="p_opis4"><span class="f_opis4">INTEGRUM DB - database.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 25px 10px 25px;"><table style="width:760px; border:solid 3px #4c4c4c; border-spacing:0px; border-collapse:collapse;">
+<thead>
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Component</span></p>
+</th>
+<th style="vertical-align:top; width:80px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Icon</span></p>
+</th>
+<th style="vertical-align:top; width:117px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Color</span></p>
+</th>
+<th style="vertical-align:top; width:365px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Component status</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">INTEGRUM Web</span></p>
+</td>
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_Web" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_web.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">gray</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">working properly</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td rowspan="3" style="vertical-align:middle; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">INTEGRUM AppServer</span></p>
+</td>
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_AppServ_g" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_appserv_g.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">gray</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">working properly</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_AppServ_y" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_appserv_y.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">yellow</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">checking connectivity</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_AppServ_r" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_appserv_r.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">red</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not working</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td rowspan="3" style="vertical-align:middle; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">INTEGRUM Server</span></p>
+</td>
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_Serv_g" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_serv_g.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">gray</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">working properly</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_Serv_y" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_serv_y.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">yellow</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">checking connectivity</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_Serv_r" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_serv_r.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">red</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not working</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td rowspan="3" style="vertical-align:middle; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">INTEGRUM DB</span></p>
+</td>
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_DB_g" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_db_g.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">gray</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">working properly</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_DB_y" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_db_y.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">yellow</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">checking connectivity</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:80px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="b_INTEGRUM_DB_r" width="54" height="60" style="margin:0px auto 0px auto;width:54px;height:60px;border:none" src="b_integrum_db_r.png"/></p>
+</td>
+<td style="vertical-align:middle; width:117px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">red</span></p>
+</td>
+<td style="vertical-align:middle; width:365px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not working</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Licence holder</span><span class="f_opis5"> - information displayed in this field depends on the license status:</span></p>
+<p class="p_opis3"><span class="f_opis3">- if no licence has been loaded yet - a message is displayed to inform you that the licence is missing,</span></p>
+<p class="p_opis3"><span class="f_opis3">- if at least one licence has been loaded, but has not been verified yet - a message is displayed to inform you that the licence has not been verified,</span></p>
+<p class="p_opis3"><span class="f_opis3">- if at least one licence has been loaded and verified - data of the licence holder are displayed.</span></p>
+<p class="p_opis" style="margin: 0px 25px 10px 50px;"><span class="f_opis">The same information is displayed on the login page, under the “LOG IN” button.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Devices</span><span class="f_opis5"> - information on Ethernet modules connected to the control panels registered in the INTEGRUM system:</span></p>
+<p class="p_opis4"><span class="f_opis4" style="font-weight: bold;">With licence</span><span class="f_opis4"> - number of Ethernet modules with licence.</span></p>
+<p class="p_opis4"><span class="f_opis4" style="font-weight: bold;">Without licence</span><span class="f_opis4"> - number of Ethernet modules without licence.</span></p>
+<p class="p_opis4"><span class="f_opis4" style="font-weight: bold;">Unsupported</span><span class="f_opis4"> - number of Ethernet modules which are not supported (unsupported firmware version).</span></p>
+<p class="p_opis4"><span class="f_opis4" style="font-weight: bold;">Details</span><span class="f_opis4"> - click to display the <a href="ekran-moduly-ethernetowe.html" class="topiclink">“Ethernet modules” screen</a>.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Licence request</span><span class="f_opis5"> - click on “Generate and save” to generate a file containing the data of Ethernet modules without licence (file with SLR extension) and save it. Location where the file will be saved depends on the web browser.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Licence</span><span class="f_opis5"> - click on “Browse” to indicate location of the file containing licences for Ethernet modules (file with SLR extension).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Upload</span><span class="f_opis5"> - click to upload the licences for Ethernet modules from the indicated SLF file.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis"><a href="ekran-moduly-ethernetowe.html" class="topiclink">“Ethernet modules” screen</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="uzyskanie-licencji.html" class="topiclink">Obtaining a license</a></span></p>
+ 
+</div></div> 
+</body>
+</html>

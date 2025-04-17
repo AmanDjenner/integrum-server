@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" id="svg2" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><defs id="defs4"><style id="style6"><![CDATA[
+    .str0 {stroke:#1F1A17;stroke-width:0.9}
+    .fil1 {fill:none}
+    .fil0 {fill:#AAA9A9}
+    .fil3 {fill:#F5B400}
+    .fil2 {fill:#7F7F7F}
+   ]]></style></defs><g id="Warstwa_x0020_1" transform="scale(3.33333)"><circle class="fil0 str0" cx="15" cy="15" r="13.763" id="circle10" fill="#aaa9a9" stroke="#1f1a17" stroke-width=".9"/><path class="fil1" id="rect12" fill="none" d="M0 0h30v30H0z"/><circle class="fil2" cx="15" cy="15" r="13.763" id="circle14" fill="#7f7f7f"/><path class="fil3" d="M15.67 2.55l10.213 18.8c.46.828-.258.952-.528.942h-20.8c-.27 0-.917-.057-.38-.947L14.85 2.547c.142-.256.455-.663.82.003zM14.04 6.618H16.31c.545 0 .897.85.792 1.794-.17 1.528-.312 2.813-.435 3.908l-.277 2.494c-.04.353-.314.62-.61.613l-.626-.016-.622-.014c-.295-.007-.566-.284-.603-.637l-.265-2.487-.41-3.88c-.1-.935.247-1.775.783-1.775zm.978 14.408c1.3 0 2.24-1.027 2.24-2.372 0-1.265-.94-2.293-2.24-2.293-1.23 0-2.24 1.03-2.24 2.294 0 1.345 1.01 2.372 2.24 2.372z" id="path16" fill="#f5b400"/></g></svg>

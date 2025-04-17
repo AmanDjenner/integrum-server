@@ -1,0 +1,25 @@
+.INT-EXP .layerIcon {
+	font: normal normal normal 14px/1 "Font Awesome 5 Free";
+	font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.INT-EXP .layerIcon:before {
+	content: "\f52b";
+}
+
+#layerFeatureInfo li.INT-EXP:before {
+  content: "\f52b"; /* FontAwesome Unicode -door-open*/
+}
+
+#popup-content div.feature-title.INT-EXP:before {
+    font: normal normal normal 14px/1 "Font Awesome 5 Free";
+		font-weight: 900;
+    content: "\f52b";
+    margin-right: 3px;
+}
+
+.ol-viewport.INT-EXP .default{background-image:url("01.svg")}
+.ol-viewport.INT-EXP .active.on{background-image:url("01.svg")}

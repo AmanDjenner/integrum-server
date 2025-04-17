@@ -1,0 +1,23 @@
+.ol-viewport.UNI-CAM {background-image:url('default.svg');background-repeat: no-repeat;}
+.ol-viewport.UNI-CAM .type11 {background-image:url('default.svg');background-repeat: no-repeat;}
+.UNI-CAM .layerIcon {
+	font: normal normal normal 14px/1 "Font Awesome 5 Free";
+	font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.UNI-CAM .layerIcon:before {
+	content: "\f03d";
+}
+#layerFeatureInfo li.UNI-CAM:before {
+	content: "\f03d";
+}
+
+#popup-content div.feature-title.UNI-CAM:before {
+    font: normal normal normal 14px/1 "Font Awesome 5 Free";
+		font-weight: 900;
+	content: "\f03d";
+    margin-right:3px;
+}

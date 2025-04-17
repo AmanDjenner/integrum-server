@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS `integrum` /*!40100 DEFAULT CHARACTER SET utf8 */;
+SET @query1 = CONCAT('CREATE USER "integrum"@"%" IDENTIFIED BY ''',@dbpwd,''' ');
+PREPARE stmt FROM @query1; EXECUTE stmt; DEALLOCATE PREPARE stmt;
+SET @query1 = CONCAT('CREATE USER "integrum"@"localhost" IDENTIFIED BY ''',@dbpwd,''' ');
+PREPARE stmt FROM @query1; EXECUTE stmt; DEALLOCATE PREPARE stmt;
+GRANT ALL PRIVILEGES ON integrum.* TO 'integrum'@'localhost';
+GRANT ALL PRIVILEGES ON integrum.* TO 'integrum'@'%';
+CREATE DATABASE IF NOT EXISTS `essential` /*!40100 DEFAULT CHARACTER SET utf8 */;
+SET @query1 = CONCAT('CREATE USER "mapsatel"@"%" IDENTIFIED BY ''',@dbpwd2,''' ');
+PREPARE stmt FROM @query1; EXECUTE stmt; DEALLOCATE PREPARE stmt;
+SET @query1 = CONCAT('CREATE USER "mapsatel"@"localhost" IDENTIFIED BY ''',@dbpwd2,''' ');
+PREPARE stmt FROM @query1; EXECUTE stmt; DEALLOCATE PREPARE stmt;
+GRANT ALL PRIVILEGES ON essential.* TO 'mapsatel'@'localhost';
+GRANT ALL PRIVILEGES ON essential.* TO 'mapsatel'@'%';
+FLUSH PRIVILEGES;

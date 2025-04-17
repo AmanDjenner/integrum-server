@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>INTEGRUM - Help</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="helpman_settings.js"></script>
+  <script type="text/javascript" src="helpman_navigation.js"></script>
+  <script type="text/javascript" src="hmcontextids.js"></script>
+
+  <link type="text/css" href="default.css" rel="stylesheet" />
+
+  <style type="text/css">
+    html,body { margin:0;padding:0;height:100%;overflow:hidden;
+    			       background:#FFFFFF;
+    }
+
+    #hmheadbox {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      height: 40px;
+      background: #4C4C4C;
+      border-left: 40px solid #F4C700;
+      }
+
+    #hmheadbox p {
+      font-size: 160%;
+      color: #FFFFFF;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-left: 15px;
+     }
+
+    #hmnavbox {
+      position: absolute;
+      left: 0px;
+      width: 260px;
+      min-width: 50px;
+      top: 40px;
+      bottom: 5px;
+     }
+
+    #hmcontentbox {
+      position: absolute;
+      top: 40px;
+      right: 0px;
+      bottom: 5px;
+      left: 260px;
+      }
+
+    iframe {
+      position: absolute;left:0;top:0;width:100%;height:100%;border:none;
+      }
+  </style>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if (!hmSupportsAbspos()) {
+      	$(window).bind("resize", function() {
+      	  hmNoAbsposResize($("#hmheadbox"), true, false);
+      	  hmNoAbsposResize($("#hmnavbox"), false, true);
+      	  hmNoAbsposResize($("#hmcontentbox"), true, true);
+	    });
+	    $(window).trigger("resize");
+	  }
+      hmCreateVSplitter($("#hmnavbox"),$("#hmcontentbox"));
+    });
+  </script>
+
+</head>
+<body>
+<div id="hmheadbox">
+<p>INTEGRUM - Help</p></div>
+<div id="hmnavbox">
+  <iframe name="hmnavigation" id="hmnavigation" src="hmcontent.html" seamless="seamless" title="Navigation Pane" frameborder="0"></iframe>
+</div>
+
+<div id="hmcontentbox" >
+  <script type="text/javascript">
+    var defaulttopic="ekran-powitalny.html";
+    var query = window.location.search.substring(1), hash = window.location.hash, xssTest = /&#39;|&#x27;|&#34;|&#x22;|&sol;|&colon;|&apos;|&quot;|&rpar;|&lpar;|&#61;|&#x3D;|%27|%22|%3d|&#58;|&#x3a;|http|=|%3a|3a;|58;|:|\"|\/|'|"/i, cntxRX = /contextid=\d*/, cntxMatch = cntxRX.exec(query), cntxSrc = "";
+    if (query != "") {
+      if (typeof(hmGetContextId) != "undefined") {
+        if (cntxMatch != null) {
+		  cntxSrc = hmGetContextId(cntxMatch[0]);
+        };
+        if (cntxSrc != "") {
+          defaulttopic = cntxSrc;
+        } else {
+            if (!xssTest.test(query) && !xssTest.test(hash))
+               defaulttopic = query + hash;
+        }
+      }
+    }
+    document.write('<iframe name="hmcontent" id="hmcontent" src="'+defaulttopic+'" seamless="seamless" title="Content Page" frameborder="0"></iframe>');
+  </script>
+  <noscript>
+    <iframe name="hmcontent" id="hmcontent" src="ekran-powitalny.html" seamless="seamless" title="Content Page" frameborder="0"></iframe>
+  </noscript>
+</div>
+</body>
+</html>
+

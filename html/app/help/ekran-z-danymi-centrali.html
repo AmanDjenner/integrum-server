@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Control panel data screen</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<!-- non-scrolling headers for CHM and WebHelp--> 
+   <style type="text/css" media="screen">
+   body { 
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+   } 
+
+   /* Set the padding in the OUTER div for MSIE and CHM to prevent the 
+      width bug and the horizontal scrollbar bug from activating. */ 
+
+  #idcontent {    
+      width: 100%; 
+      padding: 0px !important; 
+      padding: 10px 15px 5px 10px; 
+   } 
+
+/* Set the padding in the INNER div for all other browsers. */ 
+
+  #innerdiv {    
+      padding: 5px !important;  
+      padding: 0px; 
+   } 
+
+    /* These styles are for the header, the print link 
+      and the navigation links. */
+
+    .topichead {
+       padding: 5px;
+    }
+    
+    .navlinks {
+      font-size: 1em;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:visited {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* These styles are dynamically assigned with Javascript. 
+    Since the media type is "screen", they do not apply for print */ 
+
+   html.nonscroll { 
+      overflow:hidden; 
+   } 
+   body.nonscroll {    
+      overflow:hidden; 
+      height:100%; 
+   } 
+   div.nonscroll { 
+      overflow:auto; 
+   } 
+
+/* Link styles */   
+a.topiclink {font-size:18px; color: #0066FF; text-decoration: none; }
+a.topiclink:visited {color: #0066FF; }
+a.topiclink:hover {color: #CC0000; text-decoration: underline; }
+a.weblink {color: blue; text-decoration: underline; }
+a.weblink:visited {color: blue; }
+a.weblink:hover {color: white; background-color: blue;}
+a.popuplink {color: red; text-decoration: none; border-bottom: 1px dashed;}
+a.popuplink:visited {color: red;}
+a.popuplink:hover {text-decoration: none; background-color: #ffff99;}
+a.filelink {color: green;  text-decoration: none; border-bottom: 1px dashed;}
+a.filelink:visited {color: green;}
+a.filelink:hover {text-decoration: none; background-color: #ffff99;}
+a.scriptlink {color: purple; text-decoration: none; border-bottom: 1px dashed; }
+a.scriptlink:visited {color: purple;}
+a.scriptlink:hover {text-decoration: none; background-color: #ffff99;}
+</style>
+<style TYPE="text/css" media="print">
+/* Hide navigation links and icons and add space between header and
+  text in the printed version. */
+     #idnav, .navicons { display:none;	}      
+     span.f_Heading1 { color: #000; }
+     .topichead { padding: 5px 5px 20px 5px; }
+   </style>
+<!-- jQuery framework and global WebHelp settings  -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+
+<!-- NS-Header and page initialization, only  required if there's a header -->
+<script type="text/javascript"> 
+function pageOffset(win)
+{
+    if(!win) win = window;
+    var pos = {left:0,top:0};
+
+    if(typeof win.pageXOffset != 'undefined')
+    {
+         // Mozilla/Netscape
+         pos.left = win.pageXOffset;
+         pos.top = win.pageYOffset;
+    }
+    else
+    {
+         var obj = (win.document.compatMode && win.document.compatMode == "CSS1Compat") ?
+         win.document.documentElement : win.document.body || null;
+
+         pos.left = obj.scrollLeft;
+         pos.top = obj.scrollTop;
+    }
+    return pos;
+}
+
+   function doResize() { 
+     var clheight, headheight;
+     if (self.innerHeight) // all except Explorer 
+     { clheight = self.innerHeight; } 
+     else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+     { clheight = document.documentElement.clientHeight; } 
+     else if (document.body) // other Explorers 
+     { clheight = document.body.clientHeight; } 
+     headheight = document.getElementById('idheader').clientHeight;
+     if (clheight < headheight ) {clheight = headheight + 1;}
+     document.getElementById('idcontent').style.height = clheight - document.getElementById('idheader').clientHeight +'px'; 
+   } 
+
+      function nsrInit() { 
+     contentbody = document.getElementById('idcontent'); 
+     if (contentbody) { 
+       aTop = pageOffset.top; //document.getElementById('body').scrollTop; 
+       contentbody.className = 'nonscroll'; 
+       document.getElementsByTagName('body')[0].className = 'nonscroll'; 
+       document.getElementsByTagName('html')[0].className = 'nonscroll'; 
+       window.onresize = doResize; 
+       doResize(); 
+       if (contentbody.scrollTo) { contentbody.scrollTo(aTop,0); }
+      } 
+   }
+   // Only initialize if CHM is not trying to print 
+   $(document).ready(function() {
+   var lastSlashPos = document.URL.lastIndexOf("/") > document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") : document.URL.lastIndexOf("\\");
+   if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4 ).toLowerCase() != "~hh" )
+   {
+    nsrInit();
+    }
+   });
+</script>
+ 
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "ekran-z-danymi-centrali.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<!-- Topic Header --> 
+<div id="idheader">
+<table style="width:100%; border-bottom: 5px solid #F4C700; border-spacing:0px; padding:5px; background:#4C4C4C">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Control panel data screen</span></h1>
+
+    </td>
+    <td style="text-align:right; width:180px; vertical-align:top">
+     <div id="help-max-close-section" style="float:right;padding-left:10px;width:70px; display:none">
+    <a href="#" id="help-maximize"onmouseover="document.images.maximize.src='b_maximize_yellow.png'" onmouseout="document.images.maximize.src='b_maximize_silver.png'"> 
+     <img name="maximize" src="b_maximize_silver.png" border="0" alt="Maximize" title="Maximize"></a>&nbsp;
+    <a href="#" id="help-close"onmouseover="document.images.close.src='b_close_yellow.png'" onmouseout="document.images.close.src='b_close_silver.png'"> 
+     <img name="close" src="b_close_silver.png" border="0" alt="Close" title="Close"></a>&nbsp;
+    </div>
+    <div style="float:right; min-width: 97px;">
+     <a href="ekran_centrale.html"onmouseover="document.images.previous.src='b_previous_yellow.png'" onmouseout="document.images.previous.src='b_previous_silver.png'"> 
+     <img name="previous" src="b_previous_silver.png" border="0" alt="Previous" title="Previous"></a>&nbsp;
+     <a href="ekran-powitalny.html"onmouseover="document.images.top.src='b_top_yellow.png'" onmouseout="document.images.top.src='b_top_silver.png'"> 
+     <img name="top" src="b_top_silver.png" border="0" alt="Top" title="Top"></a>&nbsp;
+     <a href="ekran-z-danymi-modulu-ethernet.html"onmouseover="document.images.next.src='b_next_yellow.png'" onmouseout="document.images.next.src='b_next_silver.png'"> 
+     <img name="next" src="b_next_silver.png" border="0" alt="Next" title="Next"></a>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- Topic Body --> 
+<div id="idcontent"><div id="innerdiv"> 
+<p class="p_opis"><span class="f_opis">The screen presents data of the control panel registered in the INTEGRUM system and allows management of the alarm system.</span></p>
+<p class="p_opis"><span class="f_opis">The <a href="pasek-menu.html" class="topiclink">Menu bar</a> is displayed at the top of the screen, and under the <a href="pasek-menu.html" class="topiclink">Menu bar</a> - the control panel name in the INTEGRUM system.</span></p>
+<p class="p_opis5"><img alt="b_zalacz_czuwanie" width="50" height="50" style="margin:0;width:50px;height:50px;border:none" src="b_zalacz_czuwanie.png"/><span class="f_opis5"> &nbsp;- click to arm all partitions that are disarmed. The button is displayed if some partitions are disarmed.</span></p>
+<p class="p_opis5"><img alt="b_wylacz_czuwanie" width="50" height="50" style="margin:0;width:50px;height:50px;border:none" src="b_wylacz_czuwanie.png"/><span class="f_opis5"> &nbsp;- click to disarm all partitions that are armed. The button is displayed if some partitions are armed.</span></p>
+<p class="p_warning2" style="margin: 14px 24px 3px 24px;"><span class="f_warning2">Which partitions will be armed / disarmed depends on:</span></p>
+<p class="p_warning2" style="margin: 3px 24px 3px 24px;"><span class="f_warning2">- Ethernet module settings (virtual keypad parameters),</span></p>
+<p class="p_warning2" style="margin: 3px 24px 14px 24px;"><span class="f_warning2">- rights of the code used (the service code allows you to operate all partitions, irrespective of the Ethernet module settings).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">[region name]</span><span class="f_opis5"> - information about the region to which the control panel belongs. Click on the region name to display the <a href="menu-regionow.html" class="topiclink">regions menu</a> (you can click on another region to assign the control panel to it).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Status indicators</span><span class="f_opis5"> - information about the alarm system status is presented by using status indicators in the same way as on the “Control panels” screen (see <a href="ekran_centrale.html" class="topiclink">“Control panels” screen</a>). If any indicator is shown in the </span><img alt="i_polaczenie" width="21" height="25" style="margin:0;width:21px;height:25px;border:none" src="i_polaczenie.png"/><span class="f_opis5"> column, a message with additional information is displayed.</span></p>
+<p class="p_Naglowek2"><a id="ogolne" class="hmanchor"></a><span class="f_Naglowek2">“General” tab</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Active</span><span class="f_opis5"> - the following button is displayed:</span></p>
+<p class="p_opis4"><img alt="b_c_aktywna" width="59" height="37" style="margin:0;width:59px;height:37px;border:none" src="b_c_aktywna.png"/><span class="f_opis4"> - click to disable communication with the control panel. The button is displayed when communication with the control panel is enabled.</span></p>
+<p class="p_opis4"><img alt="b_c_nieaktywna" width="59" height="37" style="margin:0;width:59px;height:37px;border:none" src="b_c_nieaktywna.png"/><span class="f_opis4"> - click to enable communication with the control panel. The button is displayed when communication with the control panel is disabled.</span></p>
+<p class="p_opis" style="margin: 0px 24px 12px 48px;"><span class="f_opis">Communication with the control panel is established automatically after adding a control panel. For communication with the control panel, INTEGRUM uses the same port as e.g. GUARDX or INTEGRA CONTROL. If communication with the control panel is disabled in INTEGRUM, you can connect to the control panel from GUARDX program or INTEGRA CONTROL application.</span></p>
+<p class="p_warning2"><span class="f_warning2">Disable communication with the control panel before updating firmware of the alarm control panel or the Ethernet module.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Version</span><span class="f_opis5"> - information about the control panel type and firmware version.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Name</span><span class="f_opis5"> - alarm control panel name in the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Ethernet module</span><span class="f_opis5"> - name of the Ethernet module in the INTEGRUM system. Click on </span><img alt="i_edycja" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja.png"/><span class="f_opis5"> to display the screen with Ethernet module data (see <a href="ekran-z-danymi-modulu-ethernet.html" class="topiclink">Ethernet module data screen</a>).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Code</span><span class="f_opis5"> - a string of digits for user authentication in the alarm control panel. You can enter the service code, administrator code or user code. If the code is to be used for operating the control panel (which depends on the INTEGRUM system settings), remember that the user type and the user rights have effect on availability of some functions.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Identifier - INTEGRA</span><span class="f_opis5"> - a string of characters (digits or letters from A to F) for identification of the alarm control panel. This identifier is required during communication with the control panel.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Identifier - DLOADX</span><span class="f_opis5"> - a string of characters (digits or letters from A to F) for identification of the DLOADX program.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Identifier - GUARDX</span><span class="f_opis5"> - a string of characters (digits or letters from A to F) for identification of the GUARDX program. This identifier is required during communication with the control panel.</span></p>
+<p class="p_warning2"><span class="f_warning2">For more information about the code and identifiers, refer to the alarm control panel manuals.</span></p>
+<p class="p_opis5"><img alt="i_pokaz" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_pokaz.png"/><span class="f_opis5"> - click to see the code or identifier being entered.</span></p>
+<p class="p_opis5"><img alt="i_ukryj" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_ukryj.png"/><span class="f_opis5"> - click to hide the code or identifier being entered.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Region</span><span class="f_opis5"> - region to which the control panel belongs. Click on </span><img alt="i_edycja" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja.png"/><span class="f_opis5"> if you want to assign the control panel to another region (the <a href="menu-regionow.html" class="topiclink">regions menu</a> will appear - click on the region to which the control panel is to be assigned).</span></p>
+<p class="p_opis5"><img alt="b_zapisz" width="100" height="37" style="margin:0;width:100px;height:37px;border:none" src="b_zapisz.png"/><span class="f_opis5"> - click to save the changes.</span></p>
+<p class="p_Naglowek2"><a id="uzytkownicy" class="hmanchor"></a><span class="f_Naglowek2">“Users” tab</span></p>
+<p class="p_opis5"><span class="f_opis5">The list of control panel users is presented in the tab. You can manage these users (see <a href="zarzadzanie-uzytkownikami-cent.html" class="topiclink">Managing the alarm control panel users</a>).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Name</span><span class="f_opis5"> - the user name. It is preceded by an icon that provides additional information:</span></p>
+<p class="p_opis4"><img alt="i_integrum" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_integrum.png"/><span class="f_opis4"> - INTEGRUM user. User name in the INTEGRUM system is displayed. Hover the cursor over the icon to see the user number and name in the control panel.</span></p>
+<p class="p_opis4"><img alt="i_edycja_centrala" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja_centrala.png"/><span class="f_opis4"> - the alarm control panel user who is not included in the INTEGRUM database. User name in the in the alarm control panel is displayed. Hover the cursor over the icon to see the user number in the control panel.</span></p>
+<p class="p_opis" style="margin: 0px 24px 12px 48px;"><span class="f_opis">Clicking on the name will display the <a href="okno-edycja.html" class="topiclink">“Edit” window</a>.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Type</span><span class="f_opis5"> - user type in the alarm control panel.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Partitions</span><span class="f_opis5"> - numbers of the partitions to which the user has access. Hover the cursor over the partition numbers to see the number of the object to which the user belongs.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Rights</span><span class="f_opis5"> - numbers of rights the user has.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Action</span><span class="f_opis5"> - the following buttons can be displayed:</span></p>
+<p class="p_opis4"><img alt="b_centrala_karta_dodaj" width="43" height="37" style="margin:0;width:43px;height:37px;border:none" src="b_centrala_karta_dodaj.png"/> <span class="f_opis4">- click to add a proximity card to the user (see <a href="dodanie-karty-zblizeniowej.html" class="topiclink">Adding a proximity card</a>). The button is displayed when the user has no proximity card.</span></p>
+<p class="p_opis4"><img alt="b_centrala_karta_edytuj" width="43" height="37" style="margin:0;width:43px;height:37px;border:none" src="b_centrala_karta_edytuj.png"/> <span class="f_opis4">- click to delete a proximity card (see </span><span class="f_opis4"><a href="usuniecie-karty-zblizeniowej.html" class="topiclink">Deleting a proximity card</a></span><span class="f_opis4">) or replace it with another one (see <a href="zastapienie-karty-zblizeniowej.html" class="topiclink">Replacing a proximity card with another</a>). The button is displayed when the user has a proximity card. Hover the cursor over the button to see the number of the proximity card. If another user has a card with the same number, the button background will appear in red, a hovering the cursor over the button will display the name of that user.</span></p>
+<p class="p_opis4"><img alt="b_edycja_uzytkownika" width="43" height="37" style="margin:0;width:43px;height:37px;border:none" src="b_edycja_uzytkownika.png"/> <span class="f_opis4">- click to open the <a href="okno-edycja.html" class="topiclink">“Edit” window</a>.</span></p>
+<p class="p_opis4"><img alt="b_usun_uzytkownika" width="39" height="38" style="margin:0;width:39px;height:38px;border:none" src="b_usun_uzytkownika.png"/> <span class="f_opis4">- click to remove a user from the alarm control panel (see <a href="usuniecie-uzytkownika-centrale.html" class="topiclink">Deleting a user from alarm control panel (“Control panels” screen)</a>).</span></p>
+<p class="p_warning2"><span class="f_warning2">Proximity card buttons are available for the control panels with firmware version 1.16 2016-09-09 (or newer).</span></p>
+<p class="p_opis5"><img alt="b_centrala_dodaj_u" width="45" height="37" style="margin:0;width:45px;height:37px;border:none" src="b_centrala_dodaj_u.png"/><span class="f_opis5"> - click to add a user to the alarm control panel (see <a href="dodanie-uzytkownika-centrale.html" class="topiclink">Adding a user to the alarm control panel (“Control panels” screen)</a>).</span></p>
+<p class="p_Naglowek2"><a id="struktura" class="hmanchor"></a><span class="f_Naglowek2">“Structure” tab</span></p>
+<p class="p_opis"><span class="f_opis">The structure of the alarm system is presented in the tab. The structure items are designated with icons:</span></p>
+<p class="p_opis5"><img alt="i_strefa" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_strefa.png"/><span class="f_opis5"> - partition,</span></p>
+<p class="p_opis5"><img alt="i_wejscie" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_wejscie.png"/><span class="f_opis5"> - zone.</span></p>
+<p class="p_opis"><span class="f_opis">Check box and name are displayed next to the icon.</span></p>
+<p class="p_opis"><span class="f_opis">For partitions, checking the box activates a menu with the following buttons:</span></p>
+<p class="p_opis5"><img alt="by_zalacz_czuwanie" width="40" height="41" style="margin:0;width:40px;height:41px;border:none" src="by_zalacz_czuwanie.png"/><span class="f_opis5"> - click to arm the partition (or partitions, if you checked several items),</span></p>
+<p class="p_opis5"><img alt="by_wylacz_czuwanie" width="46" height="41" style="margin:0;width:46px;height:41px;border:none" src="by_wylacz_czuwanie.png"/><span class="f_opis5"> - click to disarm the partition (or partitions, if you checked several items).</span></p>
+<p class="p_opis"><span class="f_opis">For zones, checking the box activates a menu with the following buttons:</span></p>
+<p class="p_opis5"><img alt="by_odblokuj_wejscie" width="45" height="41" style="margin:0;width:45px;height:41px;border:none" src="by_odblokuj_wejscie.png"/><span class="f_opis5"> - click to unbypass the zone (or zones, if you checked several items),</span></p>
+<p class="p_opis5"><img alt="by_zablokuj_trwale" width="45" height="41" style="margin:0;width:45px;height:41px;border:none" src="by_zablokuj_trwale.png"/><span class="f_opis5"> - click to isolate the zone (or zones, if you checked several items),</span></p>
+<p class="p_opis5"><img alt="by_zablokuj_czasowo" width="45" height="41" style="margin:0;width:45px;height:41px;border:none" src="by_zablokuj_czasowo.png"/><span class="f_opis5"> - click to inhibit the zone (or zones, if you checked several items).</span></p>
+<p class="p_warning2"><span class="f_warning2">You can bypass/unbypass the zone if the partition to which the zone belongs is disarmed.</span></p>
+<p class="p_opis"><span class="f_opis">Partition status is indicated by the following icons:</span></p>
+<p class="p_opis5"><img alt="cis_cz_wyjscie_d" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_cz_wyjscie_d.png"/><span class="f_opis5"> - exit delay countdown is running - remaining time longer than 10 seconds,</span></p>
+<p class="p_opis5"><img alt="cis_cz_wyjscie" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_cz_wyjscie.png"/><span class="f_opis5"> - exit delay countdown is running - less than 10 seconds remained,</span></p>
+<p class="p_opis5"><img alt="cis_czuwa" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_czuwa.png"/><span class="f_opis5"> - armed - mode: “full”,</span></p>
+<p class="p_opis5"><img alt="cis_czuwa3" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_czuwa3.png"/><span class="f_opis5"> - armed - mode: “full + bypasses”,</span></p>
+<p class="p_opis5"><img alt="cis_czuwa_1" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_czuwa_1.png"/><span class="f_opis5"> - armed - mode: “without interior”,</span></p>
+<p class="p_opis5"><img alt="cis_czuwa2" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_czuwa2.png"/><span class="f_opis5"> - armed - mode: “without interior and without entry delay”,</span></p>
+<p class="p_opis5"><img alt="cis_blokada_czasowa" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_blokada_czasowa.png"/><span class="f_opis5"> - temporarily blocked,</span></p>
+<p class="p_opis5"><img alt="cis_blokada_wartowni" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_blokada_wartowni.png"/><span class="f_opis5"> - blocked for for guard round,</span></p>
+<p class="p_opis5"><img alt="cis_cz_wejscie" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_cz_wejscie.png"/><span class="f_opis5"> - entry delay countdown is running,</span></p>
+<p class="p_opis5"><img alt="cis_pozar" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_pozar.png"/><span class="f_opis5"> - fire alarm,</span></p>
+<p class="p_opis5"><img alt="cis_alarm" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_alarm.png"/><span class="f_opis5"> - alarm,</span></p>
+<p class="p_opis5"><img alt="cis_pamiec_alarmu_poz" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_pamiec_alarmu_poz.png"/><span class="f_opis5"> - fire alarm memory,</span></p>
+<p class="p_opis5"><img alt="cis_pamiec_alarmu" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_pamiec_alarmu.png"/><span class="f_opis5"> - alarm memory.</span></p>
+<p class="p_opis"><span class="f_opis">Zone status is indicated by the following icons:</span></p>
+<p class="p_opis5"><img alt="ci_naruszenie" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="ci_naruszenie.png"/><span class="f_opis5"> - violated,</span></p>
+<p class="p_opis5"><img alt="ci_naruszenie_długie" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="hmfile_hash_6abcb3f4.png"/><span class="f_opis5"> - trouble - long violation,</span></p>
+<p class="p_opis5"><img alt="ci_naruszenie 2" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="hmfile_hash_eecf292d.png"/><span class="f_opis5"> - trouble - no violation,</span></p>
+<p class="p_opis5"><img alt="cis_blokada_czasowa" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_blokada_czasowa.png"/><span class="f_opis5"> - inhibited,</span></p>
+<p class="p_opis5"><img alt="ci_blokada_trwała" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="hmfile_hash_69f65192.png"/><span class="f_opis5"> - isolated,</span></p>
+<p class="p_opis5"><img alt="ci_alarm_sabotazowy" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="ci_alarm_sabotazowy.png"/><span class="f_opis5"> - tamper alarm,</span></p>
+<p class="p_opis5"><img alt="cis_alarm" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_alarm.png"/><span class="f_opis5"> - alarm,</span></p>
+<p class="p_opis5"><img alt="ci_pamiec_sabotazu" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="ci_pamiec_sabotazu.png"/><span class="f_opis5"> - tamper alarm memory,</span></p>
+<p class="p_opis5"><img alt="cis_pamiec_alarmu" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="cis_pamiec_alarmu.png"/><span class="f_opis5"> - alarm memory,</span></p>
+<p class="p_opis5"><img alt="ci_sabotaz" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="ci_sabotaz.png"/><span class="f_opis5"> - tamper,</span></p>
+<p class="p_opis5"><img alt="ci_maskowanie" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="ci_maskowanie.png"/><span class="f_opis5"> - masking,</span></p>
+<p class="p_opis5"><img alt="ci_maskowanie_pamięć" width="24" height="24" style="margin:0;width:24px;height:24px;border:none" src="hmfile_hash_45cbb5ab.png"/><span class="f_opis5"> - masking memory.</span></p>
+<p class="p_Naglowek2"><a id="kontrola-konfiguracji" class="hmanchor"></a><span class="f_Naglowek2">“Configuration supervision” tab</span></p>
+<p class="p_opis"><span class="f_opis">The tab presents information on changes, if any, in the alarm control panel settings.</span></p>
+<p class="p_opis"><span class="f_opis">The tab is displayed if a license for the Alarm Control Panel Configuration Supervision Module has been purchased. The module checks regularly the alarm control panel settings for any changes and sends e-mail notifications about results of the check. Information presented in the tab is secondary in relation to the e-mail messaging.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Date</span><span class="f_opis5"> - date of configuration check.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Status</span><span class="f_opis5"> - graphic information about configuration check:</span></p>
+<p class="p_opis4"><img alt="d_yellow" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="d_yellow.png"/><span class="f_opis4"> - changes have been made to the control panel settings,</span></p>
+<p class="p_opis4"><img alt="d_red" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="d_red.png"/><span class="f_opis4"> - configuration check has failed.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Description</span><span class="f_opis5"> - text information about configuration check. If any changes have been made to the control panel settings, they are listed.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis"><a href="ekran-z-danymi-modulu-ethernet.html" class="topiclink">Ethernet module data screen</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="okno-edycja.html" class="topiclink">“Edit” window</a></span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+ 
+</div></div> 
+</body>
+</html>

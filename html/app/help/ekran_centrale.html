@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>“Control panels” screen</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<!-- non-scrolling headers for CHM and WebHelp--> 
+   <style type="text/css" media="screen">
+   body { 
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+   } 
+
+   /* Set the padding in the OUTER div for MSIE and CHM to prevent the 
+      width bug and the horizontal scrollbar bug from activating. */ 
+
+  #idcontent {    
+      width: 100%; 
+      padding: 0px !important; 
+      padding: 10px 15px 5px 10px; 
+   } 
+
+/* Set the padding in the INNER div for all other browsers. */ 
+
+  #innerdiv {    
+      padding: 5px !important;  
+      padding: 0px; 
+   } 
+
+    /* These styles are for the header, the print link 
+      and the navigation links. */
+
+    .topichead {
+       padding: 5px;
+    }
+    
+    .navlinks {
+      font-size: 1em;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:visited {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* These styles are dynamically assigned with Javascript. 
+    Since the media type is "screen", they do not apply for print */ 
+
+   html.nonscroll { 
+      overflow:hidden; 
+   } 
+   body.nonscroll {    
+      overflow:hidden; 
+      height:100%; 
+   } 
+   div.nonscroll { 
+      overflow:auto; 
+   } 
+
+/* Link styles */   
+a.topiclink {font-size:18px; color: #0066FF; text-decoration: none; }
+a.topiclink:visited {color: #0066FF; }
+a.topiclink:hover {color: #CC0000; text-decoration: underline; }
+a.weblink {color: blue; text-decoration: underline; }
+a.weblink:visited {color: blue; }
+a.weblink:hover {color: white; background-color: blue;}
+a.popuplink {color: red; text-decoration: none; border-bottom: 1px dashed;}
+a.popuplink:visited {color: red;}
+a.popuplink:hover {text-decoration: none; background-color: #ffff99;}
+a.filelink {color: green;  text-decoration: none; border-bottom: 1px dashed;}
+a.filelink:visited {color: green;}
+a.filelink:hover {text-decoration: none; background-color: #ffff99;}
+a.scriptlink {color: purple; text-decoration: none; border-bottom: 1px dashed; }
+a.scriptlink:visited {color: purple;}
+a.scriptlink:hover {text-decoration: none; background-color: #ffff99;}
+</style>
+<style TYPE="text/css" media="print">
+/* Hide navigation links and icons and add space between header and
+  text in the printed version. */
+     #idnav, .navicons { display:none;	}      
+     span.f_Heading1 { color: #000; }
+     .topichead { padding: 5px 5px 20px 5px; }
+   </style>
+<!-- jQuery framework and global WebHelp settings  -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+
+<!-- NS-Header and page initialization, only  required if there's a header -->
+<script type="text/javascript"> 
+function pageOffset(win)
+{
+    if(!win) win = window;
+    var pos = {left:0,top:0};
+
+    if(typeof win.pageXOffset != 'undefined')
+    {
+         // Mozilla/Netscape
+         pos.left = win.pageXOffset;
+         pos.top = win.pageYOffset;
+    }
+    else
+    {
+         var obj = (win.document.compatMode && win.document.compatMode == "CSS1Compat") ?
+         win.document.documentElement : win.document.body || null;
+
+         pos.left = obj.scrollLeft;
+         pos.top = obj.scrollTop;
+    }
+    return pos;
+}
+
+   function doResize() { 
+     var clheight, headheight;
+     if (self.innerHeight) // all except Explorer 
+     { clheight = self.innerHeight; } 
+     else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+     { clheight = document.documentElement.clientHeight; } 
+     else if (document.body) // other Explorers 
+     { clheight = document.body.clientHeight; } 
+     headheight = document.getElementById('idheader').clientHeight;
+     if (clheight < headheight ) {clheight = headheight + 1;}
+     document.getElementById('idcontent').style.height = clheight - document.getElementById('idheader').clientHeight +'px'; 
+   } 
+
+      function nsrInit() { 
+     contentbody = document.getElementById('idcontent'); 
+     if (contentbody) { 
+       aTop = pageOffset.top; //document.getElementById('body').scrollTop; 
+       contentbody.className = 'nonscroll'; 
+       document.getElementsByTagName('body')[0].className = 'nonscroll'; 
+       document.getElementsByTagName('html')[0].className = 'nonscroll'; 
+       window.onresize = doResize; 
+       doResize(); 
+       if (contentbody.scrollTo) { contentbody.scrollTo(aTop,0); }
+      } 
+   }
+   // Only initialize if CHM is not trying to print 
+   $(document).ready(function() {
+   var lastSlashPos = document.URL.lastIndexOf("/") > document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") : document.URL.lastIndexOf("\\");
+   if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4 ).toLowerCase() != "~hh" )
+   {
+    nsrInit();
+    }
+   });
+</script>
+ 
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "ekran_centrale.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<!-- Topic Header --> 
+<div id="idheader">
+<table style="width:100%; border-bottom: 5px solid #F4C700; border-spacing:0px; padding:5px; background:#4C4C4C">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">“Control panels” screen</span></h1>
+
+    </td>
+    <td style="text-align:right; width:180px; vertical-align:top">
+     <div id="help-max-close-section" style="float:right;padding-left:10px;width:70px; display:none">
+    <a href="#" id="help-maximize"onmouseover="document.images.maximize.src='b_maximize_yellow.png'" onmouseout="document.images.maximize.src='b_maximize_silver.png'"> 
+     <img name="maximize" src="b_maximize_silver.png" border="0" alt="Maximize" title="Maximize"></a>&nbsp;
+    <a href="#" id="help-close"onmouseover="document.images.close.src='b_close_yellow.png'" onmouseout="document.images.close.src='b_close_silver.png'"> 
+     <img name="close" src="b_close_silver.png" border="0" alt="Close" title="Close"></a>&nbsp;
+    </div>
+    <div style="float:right; min-width: 97px;">
+     <a href="filtrowanie-wg-uprawnien-uzytk.html"onmouseover="document.images.previous.src='b_previous_yellow.png'" onmouseout="document.images.previous.src='b_previous_silver.png'"> 
+     <img name="previous" src="b_previous_silver.png" border="0" alt="Previous" title="Previous"></a>&nbsp;
+     <a href="ekran-powitalny.html"onmouseover="document.images.top.src='b_top_yellow.png'" onmouseout="document.images.top.src='b_top_silver.png'"> 
+     <img name="top" src="b_top_silver.png" border="0" alt="Top" title="Top"></a>&nbsp;
+     <a href="ekran-z-danymi-centrali.html"onmouseover="document.images.next.src='b_next_yellow.png'" onmouseout="document.images.next.src='b_next_silver.png'"> 
+     <img name="next" src="b_next_silver.png" border="0" alt="Next" title="Next"></a>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- Topic Body --> 
+<div id="idcontent"><div id="innerdiv"> 
+<p class="p_opis"><span class="f_opis">The screen presents the list of INTEGRA / INTEGRA Plus control panels registered in the INTEGRUM system and allows you to manage them. You can also use this screen to arm/disarm the alarm systems.</span></p>
+<p class="p_opis"><span class="f_opis">The <a href="pasek-menu.html" class="topiclink">Menu bar</a> is displayed at the top of the screen.</span></p>
+<p class="p_opis5"><img alt="b_dodaj" width="50" height="50" style="margin:0;width:50px;height:50px;border:none" src="b_dodaj.png"/><span class="f_opis5"> &nbsp;- click to add a new control panel to the INTEGRUM system (see <a href="dodanie-nowej-centrali.html" class="topiclink">Adding a new control panel</a>).</span></p>
+<p class="p_opis5"><img alt="b_eksportuj" width="50" height="50" style="margin:0;width:50px;height:50px;border:none" src="b_eksportuj.png"/><span class="f_opis5"> - click to export the list of control panels to CSV file.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">[region name]</span><span class="f_opis5"> - information about the region selected in the regions menu. Control panels belonging to the given region are displayed on the screen (if the “Show child items” option is enabled, control panels belonging to sub-regions are shown as well). Click on the region name to display the <a href="menu-regionow.html" class="topiclink">regions menu</a> and select another region.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Name</span><span class="f_opis5"> - name of the alarm control panel in the INTEGRUM system. Click on the control panel name to display the control panel data screen (see <a href="ekran-z-danymi-centrali.html" class="topiclink">Control panel data screen</a>).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Address</span><span class="f_opis5"> - address of the Ethernet module through which communication with the control panel takes place.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Status indicators</span><span class="f_opis5"> - information about the alarm system status is presented by means of status indicators. The status indicators perform a similar function as the LEDs in keypads. Each column is designated by an icon for identification of the status indicators and filtering of the control panels by status (see <a href="filtrowanie-status-centrali.html" class="topiclink">Filtering by control panel status</a>). How the status is presented in each column is explained in the table below. Click on the status indicator to go to the <a href="ekran-zdarzenia.html" class="topiclink">“Event log”</a> screen. Events related to the given control panel and the status presented in the column will be displayed:</span></p>
+<p class="p_opis4"><span class="f_opis4"> </span><img alt="i_alarm" width="23" height="25" style="margin:0;width:23px;height:25px;border:none" src="i_alarm.png"/> <span class="f_opis4">- alarms,</span></p>
+<p class="p_opis4"><img alt="i_awaria" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_awaria.png"/><span class="f_opis4"> - troubles,</span></p>
+<p class="p_opis4"><img alt="i_czuwanie" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_czuwanie.png"/><span class="f_opis4"> - arming / disarming events,</span></p>
+<p class="p_opis4"><img alt="i_serwis" width="23" height="25" style="margin:0;width:23px;height:25px;border:none" src="i_serwis.png"/><span class="f_opis4"> - system events,</span></p>
+<p class="p_opis4"><img alt="i_polaczenie" width="21" height="25" style="margin:0;width:21px;height:25px;border:none" src="i_polaczenie.png"/><span class="f_opis4"> - events related to communication between INTEGRUM and control panel.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 25px 10px 25px;"><table style="width:760px; border:solid 3px #4c4c4c; border-spacing:0px; border-collapse:collapse;">
+<thead>
+<tr style="text-align:left;vertical-align:middle;">
+<th style="vertical-align:middle; width:75px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Icon</span></p>
+</th>
+<th style="vertical-align:middle; width:100px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Indicator</span></p>
+</th>
+<th style="vertical-align:middle; width:92px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Color</span></p>
+</th>
+<th style="vertical-align:middle; width:112px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Behavior</span></p>
+</th>
+<th style="vertical-align:middle; width:367px; background-color:#4c4c4c; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela_naglowek"><span class="f_tabela_naglowek">Alarm system status</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:75px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="i_alarm" width="23" height="25" style="margin:0px auto 0px auto;width:23px;height:25px;border:none" src="i_alarm.png"/></p>
+</td>
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_red" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_red.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">red</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">alarm</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:75px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="i_awaria" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="i_awaria.png"/></p>
+</td>
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_yellow" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_yellow.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">yellow</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">trouble</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td rowspan="2" style="vertical-align:middle; width:75px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="i_czuwanie" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="i_czuwanie.png"/></p>
+</td>
+<td rowspan="2" style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_green" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_green.png"/></p>
+</td>
+<td rowspan="2" style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">green</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">some partitions are armed or exit delay countdown is running</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">all supported partitions are armed</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:75px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="i_serwis" width="23" height="25" style="margin:0px auto 0px auto;width:23px;height:25px;border:none" src="i_serwis.png"/></p>
+</td>
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_green" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_green.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">green</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">service mode is active</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td rowspan="3" style="vertical-align:middle; width:75px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="i_polaczenie" width="21" height="25" style="margin:0px auto 0px auto;width:21px;height:25px;border:none" src="i_polaczenie.png"/></p>
+</td>
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_green" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_green.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">green</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">data reading in progress</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_yellow" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_yellow.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">yellow</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">communication with the control panel disabled</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:middle;">
+<td style="vertical-align:middle; width:100px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela" style="text-align: center;"><img alt="d_red" width="25" height="25" style="margin:0px auto 0px auto;width:25px;height:25px;border:none" src="d_red.png"/></p>
+</td>
+<td style="vertical-align:middle; width:92px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">red</span></p>
+</td>
+<td style="vertical-align:middle; width:112px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">not flashing</span></p>
+</td>
+<td style="vertical-align:middle; width:367px; padding:0px; border:solid thin #4c4c4c;"><p class="p_tabela"><span class="f_tabela">no communication with the control panel</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_warning2"><span class="f_warning2">Which data are presented, which partitions are supported etc. depends on the Ethernet module settings (virtual keypad parameters). These settings are configured by installer of the alarm system.</span></p>
+<p class="p_warning2"><span class="f_warning2">To get further information on the indicators in column </span><img alt="i_polaczenie" width="21" height="25" style="margin:0;width:21px;height:25px;border:none" src="i_polaczenie.png"/><span class="f_warning2">, go to the screen with control panel data.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Action</span><span class="f_opis5"> - the following buttons can be displayed:</span></p>
+<p class="p_opis4"><img alt="i_zalacz" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_zalacz.png"/><span class="f_opis4"> - click to arm all partitions which are disarmed. The button is displayed if there are some disarmed partitions.</span></p>
+<p class="p_opis4"><img alt="i_wylacz" width="24" height="25" style="margin:0;width:24px;height:25px;border:none" src="i_wylacz.png"/><span class="f_opis4"> - click to disarm all partitions that are armed. The button is displayed if there are some armed partitions.</span></p>
+<p class="p_warning2" style="margin: 14px 24px 3px 48px;"><span class="f_warning2">Which partitions will be armed / disarmed depends on:</span></p>
+<p class="p_warning2" style="margin: 3px 24px 3px 48px;"><span class="f_warning2">- Ethernet module settings (virtual keypad parameters),</span></p>
+<p class="p_warning2" style="margin: 3px 24px 14px 48px;"><span class="f_warning2">- rights of the code used (the service code allows you to operate all partitions, irrespective of the Ethernet module settings).</span></p>
+<p class="p_opis4"><img alt="i_edycja" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja.png"/><span class="f_opis4"> - click to display the screen with control panel data.</span></p>
+<p class="p_opis4"><img alt="i_usun" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_usun.png"/><span class="f_opis4"> - click to remove the control panel from the INTEGRUM system (see <a href="usuniecie-centrali.html" class="topiclink">Deleting a control panel</a>).</span></p>
+<p class="p_opis"><img alt="b_filtr" width="38" height="36" style="margin:0;width:38px;height:36px;border:none" src="b_filtr.png"/><span class="f_opis"> &nbsp;- click to filter the list by predefined criteria (see <a href="filtrowanie-listy-central.html" class="topiclink">Filtering the list of control panels</a>).</span></p>
+<p class="p_opis"><img alt="b_usun_filtr" width="38" height="36" style="margin:0;width:38px;height:36px;border:none" src="b_usun_filtr.png"/><span class="f_opis"> &nbsp;- click to remove the filter and display the list of all control panels.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis"><a href="ekran-z-danymi-centrali.html" class="topiclink">Control panel data screen</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="zarzadzanie-centralami-alarmow.html" class="topiclink">Managing the alarm control panels</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="zarzadzanie-uzytkownikami-cent.html" class="topiclink">Managing the alarm control panel users</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="zarzadzanie-kartami-centrale.html" class="topiclink">Managing the proximity cards</a></span></p>
+<p class="p_opis"><span class="f_opis"><a href="filtrowanie-listy-central.html" class="topiclink">Filtering the list of control panels</a></span></p>
+ 
+</div></div> 
+</body>
+</html>

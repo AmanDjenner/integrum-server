@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>User data screen</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<!-- non-scrolling headers for CHM and WebHelp--> 
+   <style type="text/css" media="screen">
+   body { 
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+   } 
+
+   /* Set the padding in the OUTER div for MSIE and CHM to prevent the 
+      width bug and the horizontal scrollbar bug from activating. */ 
+
+  #idcontent {    
+      width: 100%; 
+      padding: 0px !important; 
+      padding: 10px 15px 5px 10px; 
+   } 
+
+/* Set the padding in the INNER div for all other browsers. */ 
+
+  #innerdiv {    
+      padding: 5px !important;  
+      padding: 0px; 
+   } 
+
+    /* These styles are for the header, the print link 
+      and the navigation links. */
+
+    .topichead {
+       padding: 5px;
+    }
+    
+    .navlinks {
+      font-size: 1em;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:visited {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* These styles are dynamically assigned with Javascript. 
+    Since the media type is "screen", they do not apply for print */ 
+
+   html.nonscroll { 
+      overflow:hidden; 
+   } 
+   body.nonscroll {    
+      overflow:hidden; 
+      height:100%; 
+   } 
+   div.nonscroll { 
+      overflow:auto; 
+   } 
+
+/* Link styles */   
+a.topiclink {font-size:18px; color: #0066FF; text-decoration: none; }
+a.topiclink:visited {color: #0066FF; }
+a.topiclink:hover {color: #CC0000; text-decoration: underline; }
+a.weblink {color: blue; text-decoration: underline; }
+a.weblink:visited {color: blue; }
+a.weblink:hover {color: white; background-color: blue;}
+a.popuplink {color: red; text-decoration: none; border-bottom: 1px dashed;}
+a.popuplink:visited {color: red;}
+a.popuplink:hover {text-decoration: none; background-color: #ffff99;}
+a.filelink {color: green;  text-decoration: none; border-bottom: 1px dashed;}
+a.filelink:visited {color: green;}
+a.filelink:hover {text-decoration: none; background-color: #ffff99;}
+a.scriptlink {color: purple; text-decoration: none; border-bottom: 1px dashed; }
+a.scriptlink:visited {color: purple;}
+a.scriptlink:hover {text-decoration: none; background-color: #ffff99;}
+</style>
+<style TYPE="text/css" media="print">
+/* Hide navigation links and icons and add space between header and
+  text in the printed version. */
+     #idnav, .navicons { display:none;	}      
+     span.f_Heading1 { color: #000; }
+     .topichead { padding: 5px 5px 20px 5px; }
+   </style>
+<!-- jQuery framework and global WebHelp settings  -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+
+<!-- NS-Header and page initialization, only  required if there's a header -->
+<script type="text/javascript"> 
+function pageOffset(win)
+{
+    if(!win) win = window;
+    var pos = {left:0,top:0};
+
+    if(typeof win.pageXOffset != 'undefined')
+    {
+         // Mozilla/Netscape
+         pos.left = win.pageXOffset;
+         pos.top = win.pageYOffset;
+    }
+    else
+    {
+         var obj = (win.document.compatMode && win.document.compatMode == "CSS1Compat") ?
+         win.document.documentElement : win.document.body || null;
+
+         pos.left = obj.scrollLeft;
+         pos.top = obj.scrollTop;
+    }
+    return pos;
+}
+
+   function doResize() { 
+     var clheight, headheight;
+     if (self.innerHeight) // all except Explorer 
+     { clheight = self.innerHeight; } 
+     else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+     { clheight = document.documentElement.clientHeight; } 
+     else if (document.body) // other Explorers 
+     { clheight = document.body.clientHeight; } 
+     headheight = document.getElementById('idheader').clientHeight;
+     if (clheight < headheight ) {clheight = headheight + 1;}
+     document.getElementById('idcontent').style.height = clheight - document.getElementById('idheader').clientHeight +'px'; 
+   } 
+
+      function nsrInit() { 
+     contentbody = document.getElementById('idcontent'); 
+     if (contentbody) { 
+       aTop = pageOffset.top; //document.getElementById('body').scrollTop; 
+       contentbody.className = 'nonscroll'; 
+       document.getElementsByTagName('body')[0].className = 'nonscroll'; 
+       document.getElementsByTagName('html')[0].className = 'nonscroll'; 
+       window.onresize = doResize; 
+       doResize(); 
+       if (contentbody.scrollTo) { contentbody.scrollTo(aTop,0); }
+      } 
+   }
+   // Only initialize if CHM is not trying to print 
+   $(document).ready(function() {
+   var lastSlashPos = document.URL.lastIndexOf("/") > document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") : document.URL.lastIndexOf("\\");
+   if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4 ).toLowerCase() != "~hh" )
+   {
+    nsrInit();
+    }
+   });
+</script>
+ 
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "ekran-z-danymi-uzytkownika.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<!-- Topic Header --> 
+<div id="idheader">
+<table style="width:100%; border-bottom: 5px solid #F4C700; border-spacing:0px; padding:5px; background:#4C4C4C">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">User data screen</span></h1>
+
+    </td>
+    <td style="text-align:right; width:180px; vertical-align:top">
+     <div id="help-max-close-section" style="float:right;padding-left:10px;width:70px; display:none">
+    <a href="#" id="help-maximize"onmouseover="document.images.maximize.src='b_maximize_yellow.png'" onmouseout="document.images.maximize.src='b_maximize_silver.png'"> 
+     <img name="maximize" src="b_maximize_silver.png" border="0" alt="Maximize" title="Maximize"></a>&nbsp;
+    <a href="#" id="help-close"onmouseover="document.images.close.src='b_close_yellow.png'" onmouseout="document.images.close.src='b_close_silver.png'"> 
+     <img name="close" src="b_close_silver.png" border="0" alt="Close" title="Close"></a>&nbsp;
+    </div>
+    <div style="float:right; min-width: 97px;">
+     <a href="uzytkownik-centrali-alarmowej.html"onmouseover="document.images.previous.src='b_previous_yellow.png'" onmouseout="document.images.previous.src='b_previous_silver.png'"> 
+     <img name="previous" src="b_previous_silver.png" border="0" alt="Previous" title="Previous"></a>&nbsp;
+     <a href="ekran-powitalny.html"onmouseover="document.images.top.src='b_top_yellow.png'" onmouseout="document.images.top.src='b_top_silver.png'"> 
+     <img name="top" src="b_top_silver.png" border="0" alt="Top" title="Top"></a>&nbsp;
+     <a href="zarzadzanie-uz-integrum.html"onmouseover="document.images.next.src='b_next_yellow.png'" onmouseout="document.images.next.src='b_next_silver.png'"> 
+     <img name="next" src="b_next_silver.png" border="0" alt="Next" title="Next"></a>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- Topic Body --> 
+<div id="idcontent"><div id="innerdiv"> 
+<p class="p_opis"><span class="f_opis">The screen presents data of the INTEGRUM user and allows you to manage the user settings.</span></p>
+<p class="p_opis"><span class="f_opis">At the top of the screen the <a href="pasek-menu.html" class="topiclink">Menu bar</a> is displayed, and under it – the user name in the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">[region name]</span><span class="f_opis5"> - information on the region to which the user belongs. Click on the region name to display the <a href="menu-regionow.html" class="topiclink">regions menu</a> (you can click on another region to assign a user to it).</span></p>
+<p class="p_Naglowek2"><a id="ogolne" class="hmanchor"></a><span class="f_Naglowek2">“General” tab</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Region</span><span class="f_opis5"> - region to which the user belongs. Click on </span><img alt="i_edycja" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja.png"/><span class="f_opis5"> if you want assign the user to another region (the regions menu will appear - click on the region to which the user is to be assigned).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">First name</span><span class="f_opis5"> - first name of the user.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Surname</span><span class="f_opis5"> - last name of the user.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Name</span><span class="f_opis5"> - user name in the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">E-mail</span><span class="f_opis5"> - e-mail address of the user.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Telephone</span><span class="f_opis5"> - telephone number of the user.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">PHOTO</span><span class="f_opis5"> - click to add a photo of the user. You can select JPG or PNG file.</span></p>
+<p class="p_opis5"><img alt="b_zapisz" width="100" height="37" style="margin:0;width:100px;height:37px;border:none" src="b_zapisz.png"/><span class="f_opis5"> - click to save the changes.</span></p>
+<p class="p_Naglowek2"><a id="dostep-do-centrali" class="hmanchor"></a><span class="f_Naglowek2">“Access to control panel” tab</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Name</span><span class="f_opis5"> - user name in the control panel according to INTEGRUM. If the user has another name in the alarm control panel selected in the “Control panels” field, it is displayed additionally (preceded by the </span><img alt="i_edycja_centrala" width="25" height="25" style="margin:0;width:25px;height:25px;border:none" src="i_edycja_centrala.png"/><span class="f_opis5"> icon).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Code</span><span class="f_opis5"> - a string of digits for user authentication in the alarm control panel.</span></p>
+<p class="p_opis5"><img alt="i_pokaz" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_pokaz.png"/><span class="f_opis5"> - click to see the code being entered.</span></p>
+<p class="p_opis5"><img alt="i_ukryj" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_ukryj.png"/><span class="f_opis5"> - click to hide the code being entered.</span></p>
+<p class="p_opis5"><img alt="b_zapisz_g" width="100" height="36" style="margin:0;width:100px;height:36px;border:none" src="b_zapisz_g.png"/><span class="f_opis5"> - click to save the change of name or code.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Control panels</span><span class="f_opis5"> - in this field, you can select the alarm control panel to which you want to add a user or in which you want to edit the user settings. If the given user has already been added to the control panel, the control panel name is presented in bold type.</span></p>
+<p class="p_opis5"><img alt="b_bez_podregionow" width="59" height="34" style="margin:0;width:59px;height:34px;border:none" src="b_bez_podregionow.png"/><span class="f_opis5"> - click if the control panels from the region selected in the regions menu and the sub-regions are to be available in the “Control panels” field. The button is displayed only if control panels from the region selected in the regions menu are available in the “Control panels” field.</span></p>
+<p class="p_opis5"><img alt="b_podregiony" width="59" height="34" style="margin:0;width:59px;height:34px;border:none" src="b_podregiony.png"/><span class="f_opis5"> - click if only the control panels from the region selected in the regions menu are to be available in the “Control panels” field. The button is displayed if control panels from the region selected in the regions menu and the sub-regions are available in the “Control panels” field.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Object</span><span class="f_opis5"> - when adding a user, select the object to which you want to add a user. When editing a user, the name of object to which the user belongs is displayed in the field. If there is just one object in the control panel, the field is not displayed.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Partitions</span><span class="f_opis5"> - list of partitions belonging to the object. If the box next to the partition name is checked, the user has access to the partition.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">User schedule</span><span class="f_opis5"> - in this field, you can select one of the predefined schedules of alarm control panel user. The schedule specifies the user type and the user rights.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">User type</span><span class="f_opis5"> - type of the alarm control panel user. If you want to change the user type, click on the field and select another user type from the list.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Schedule</span><span class="f_opis5"> - number of the time schedule which defines when the user has access to the alarm system. The field is displayed for the user of “Scheduled” type.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Number of days</span><span class="f_opis5"> - number of days during which the user has access to the alarm system. The field is displayed for the users of “Renewable”, “Temporary” and “Scheduled” types.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Rights</span><span class="f_opis5"> - list of rights available to the alarm control panel user. The user has the given right if the box next to it is checked.</span></p>
+<p class="p_opis5"><img alt="b_select_all" width="38" height="38" style="margin:0;width:38px;height:38px;border:none" src="b_select_all.png"/><span class="f_opis5"> - click if you want to select all rights.</span></p>
+<p class="p_opis5"><img alt="b_invert" width="37" height="38" style="margin:0;width:37px;height:38px;border:none" src="b_invert.png"/><span class="f_opis5"> - click if you want to invert the selection.</span></p>
+<p class="p_opis5"><img alt="b_deselect_all" width="36" height="38" style="margin:0;width:36px;height:38px;border:none" src="b_deselect_all.png"/><span class="f_opis5"> - click if you want to deselect all rights.</span></p>
+<p class="p_warning2"><span class="f_warning2">You can edit the user type and rights if you have access to the “Granting rights without using schedules” function.</span></p>
+<p class="p_opis5"><img alt="b_usun_z_centrali" width="43" height="38" style="margin:0;width:43px;height:38px;border:none" src="b_usun_z_centrali.png"/><span class="f_opis5"> - click to delete the user from the selected control panel.</span></p>
+<p class="p_opis5"><img alt="b_dodaj_karte" width="43" height="38" style="margin:0;width:43px;height:38px;border:none" src="b_dodaj_karte.png"/> - click to add proximity card to a user (see <a href="dodanie-karty-zblizeniowej.html" class="topiclink">Adding a proximity card</a>) in the selected control panel. The button is displayed if the user has no proximity card in the selected control panel.</p>
+<p class="p_opis5"><img alt="b_edytuj_karte" width="43" height="38" style="margin:0;width:43px;height:38px;border:none" src="b_edytuj_karte.png"/><span class="f_opis5"> - click to remove a proximity card (see <a href="usuniecie-karty-zblizeniowej.html" class="topiclink">Deleting a proximity card</a>) or replace it with another one (see <a href="zastapienie-karty-zblizeniowej.html" class="topiclink">Replacing a proximity card with another</a>) in the selected alarm control panel. The button is displayed if the user has proximity card in the selected control panel. Hover the cursor over the button to see the number of the proximity card. If another user has a card with the same number, the button background will appear in red.</span></p>
+<p class="p_warning2"><span class="f_warning2">Proximity card buttons are available for the control panels with firmware version 1.16 2016-09-09 (or newer).</span></p>
+<p class="p_opis5"><img alt="b_dane_centrali" width="44" height="38" style="margin:0;width:44px;height:38px;border:none" src="b_dane_centrali.png"/><span class="f_opis5"> - click to go to the <a href="ekran-z-danymi-centrali.html#uzytkownicy" class="topiclink">“Users”</a> tab on the screen with data of the control panel selected in the “Control panels” field (see <a href="ekran-z-danymi-centrali.html" class="topiclink">Control panel data screen</a>).</span></p>
+<p class="p_opis5"><img alt="b_zapisz_centrala" width="99" height="36" style="margin:0;width:99px;height:36px;border:none" src="b_zapisz_centrala.png"/><span class="f_opis5"> - click to save the changes of user settings in the selected control panel.</span></p>
+<p class="p_Naglowek2"><a id="dostep-do-aplikacji" class="hmanchor"></a><span class="f_Naglowek2">“Access to application” tab</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Login</span><span class="f_opis5"> - a string of characters for identification of the user by the INTEGRUM application.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Password</span><span class="f_opis5"> - a string of characters for authentication of the INTEGRUM user. The password must consist of at least 8 characters. You can use digits, letters and special characters.</span></p>
+<p class="p_opis5"><img alt="i_pokaz" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_pokaz.png"/><span class="f_opis5"> - click to see the password being entered.</span></p>
+<p class="p_opis5"><img alt="i_ukryj" width="26" height="26" style="margin:0;width:26px;height:26px;border:none" src="i_ukryj.png"/><span class="f_opis5"> - click to hide the password being entered.</span></p>
+<p class="p_warning2"><span class="f_warning2">It is recommended that you create passwords with a combination of capital and small letters, digits and special characters.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Roles</span><span class="f_opis5"> - the field allows you to assign roles to users (see <a href="ekran-role-uzytkownikow.html" class="topiclink">“User roles” screen</a>). You have to assign at least one role to the user.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Accessible region</span><span class="f_opis5"> - in this field, you can select the region the user will have access to.</span></p>
+<p class="p_opis5"><img alt="b_zapisz" width="100" height="37" style="margin:0;width:100px;height:37px;border:none" src="b_zapisz.png"/><span class="f_opis5"> - click to save the changes.</span></p>
+<p class="p_opis5"><span class="f_opis5">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5"><a href="zarzadzanie-uz-integrum.html" class="topiclink">Managing the INTEGRUM users</a></span></p>
+<p class="p_opis5"><span class="f_opis5">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+ 
+</div></div> 
+</body>
+</html>

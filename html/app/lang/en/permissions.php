@@ -1,0 +1,46 @@
+﻿<?php
+$t = array(
+'01DASHBOARD' => 'Tablica informacyjna',
+'02EVENTS' => 'Events',
+'03INTEGRA' => 'Control panels',
+'04USERINTEGRA' => 'Access to the control panel',
+'05USER' => 'Users',
+'06USERAPPL' => 'Access to the application',
+'07PROFILE' => 'User schedules',
+'08LICENSE' => 'Licences',
+'09REGION' => 'Regions',
+'10ROLES' => 'Rights',
+    
+'ACTDASHBOARD' => 'Operating map items',
+'COMEVENTS' => 'Commenting on new events',
+'SELDASHBOARD' => 'Access to dashboard',
+'COMLATEREVENTS' => 'Adding comments to events',
+'SELEVENTS' => 'Viewing events',
+'CREINTEGRA' => 'Adding INTEGRA control panels',
+'DELINTEGRA' => 'Deleting INTEGRA control panels',
+'EDTINTEGRA' => 'Editing INTEGRA control panels',
+'EXPINTEGRA' => 'Exporting INTEGRA control panels',
+'MANINTEGRA' => 'Operating INTEGRA control panels',
+'MANGUARDX' => 'Starting GUARDX program',
+'RAPINTEGRA' => 'Configuration supervision',
+'SELINTEGRA' => 'Viewing INTEGRA control panels',
+'LICMANAGE' => 'Managing the licences',
+'EDTMAP' => 'Downloading map editor',
+'MANPROFILE' => 'Managing INTEGRA user schedules',
+'MANROLES' => 'Managing roles',
+'MANREGION' => 'Managing regions',
+'CREUSER' => 'Adding INTEGRUM users',
+'DELUSER' => 'Deleting INTEGRUM users',
+'EDTUSER' => 'Editing INTEGRUM users',
+'SELUSER' => 'Viewing INTEGRUM users',
+'MANUSERAPPL' => 'Managing application access',
+'CREUSERINTEGRA' => 'Adding INTEGRA users',
+'DELUSERINTEGRA' => 'Deleting INTEGRA users',
+'EDTUSERINTEGRA' => 'Editing INTEGRA users',
+'NOPROFILE' => 'Granting rights without using schedules',
+'SELUSERINTEGRA' => 'Viewing INTEGRA users',
+);
+// 'MANUSERAPPL','MANPROFILE','LICMANAGE','MANROLES','MANREGION'
+
+
+return $t;

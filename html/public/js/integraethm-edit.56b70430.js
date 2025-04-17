@@ -1,0 +1,1 @@
+jQuery(document).ready(function(a){function b(){var b,d=0;a.get("/hierarchy/get",function(a){d=a.id,b=a.name,null!=d&&c(d,b)})}function c(b,c){a("#devIdGroup").hide(),a("#message-tree").text(c)}b()});

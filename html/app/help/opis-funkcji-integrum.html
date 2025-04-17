@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Description of functions available to INTEGRUM application users</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<!-- non-scrolling headers for CHM and WebHelp--> 
+   <style type="text/css" media="screen">
+   body { 
+      margin:0; 
+      padding:0; 
+      overflow: auto; 
+      background: #FFFFFF; 
+   } 
+   #idheader { 
+      width:100%; 
+      height:auto; 
+      padding: 0; 
+      margin: 0; 
+   } 
+
+   /* Set the padding in the OUTER div for MSIE and CHM to prevent the 
+      width bug and the horizontal scrollbar bug from activating. */ 
+
+  #idcontent {    
+      width: 100%; 
+      padding: 0px !important; 
+      padding: 10px 15px 5px 10px; 
+   } 
+
+/* Set the padding in the INNER div for all other browsers. */ 
+
+  #innerdiv {    
+      padding: 5px !important;  
+      padding: 0px; 
+   } 
+
+    /* These styles are for the header, the print link 
+      and the navigation links. */
+
+    .topichead {
+       padding: 5px;
+    }
+    
+    .navlinks {
+      font-size: 1em;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:visited {
+      text-decoration: none;
+      color: blue;
+    }
+    .navlinks a:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* These styles are dynamically assigned with Javascript. 
+    Since the media type is "screen", they do not apply for print */ 
+
+   html.nonscroll { 
+      overflow:hidden; 
+   } 
+   body.nonscroll {    
+      overflow:hidden; 
+      height:100%; 
+   } 
+   div.nonscroll { 
+      overflow:auto; 
+   } 
+
+/* Link styles */   
+a.topiclink {font-size:18px; color: #0066FF; text-decoration: none; }
+a.topiclink:visited {color: #0066FF; }
+a.topiclink:hover {color: #CC0000; text-decoration: underline; }
+a.weblink {color: blue; text-decoration: underline; }
+a.weblink:visited {color: blue; }
+a.weblink:hover {color: white; background-color: blue;}
+a.popuplink {color: red; text-decoration: none; border-bottom: 1px dashed;}
+a.popuplink:visited {color: red;}
+a.popuplink:hover {text-decoration: none; background-color: #ffff99;}
+a.filelink {color: green;  text-decoration: none; border-bottom: 1px dashed;}
+a.filelink:visited {color: green;}
+a.filelink:hover {text-decoration: none; background-color: #ffff99;}
+a.scriptlink {color: purple; text-decoration: none; border-bottom: 1px dashed; }
+a.scriptlink:visited {color: purple;}
+a.scriptlink:hover {text-decoration: none; background-color: #ffff99;}
+</style>
+<style TYPE="text/css" media="print">
+/* Hide navigation links and icons and add space between header and
+  text in the printed version. */
+     #idnav, .navicons { display:none;	}      
+     span.f_Heading1 { color: #000; }
+     .topichead { padding: 5px 5px 20px 5px; }
+   </style>
+<!-- jQuery framework and global WebHelp settings  -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+
+<!-- NS-Header and page initialization, only  required if there's a header -->
+<script type="text/javascript"> 
+function pageOffset(win)
+{
+    if(!win) win = window;
+    var pos = {left:0,top:0};
+
+    if(typeof win.pageXOffset != 'undefined')
+    {
+         // Mozilla/Netscape
+         pos.left = win.pageXOffset;
+         pos.top = win.pageYOffset;
+    }
+    else
+    {
+         var obj = (win.document.compatMode && win.document.compatMode == "CSS1Compat") ?
+         win.document.documentElement : win.document.body || null;
+
+         pos.left = obj.scrollLeft;
+         pos.top = obj.scrollTop;
+    }
+    return pos;
+}
+
+   function doResize() { 
+     var clheight, headheight;
+     if (self.innerHeight) // all except Explorer 
+     { clheight = self.innerHeight; } 
+     else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+     { clheight = document.documentElement.clientHeight; } 
+     else if (document.body) // other Explorers 
+     { clheight = document.body.clientHeight; } 
+     headheight = document.getElementById('idheader').clientHeight;
+     if (clheight < headheight ) {clheight = headheight + 1;}
+     document.getElementById('idcontent').style.height = clheight - document.getElementById('idheader').clientHeight +'px'; 
+   } 
+
+      function nsrInit() { 
+     contentbody = document.getElementById('idcontent'); 
+     if (contentbody) { 
+       aTop = pageOffset.top; //document.getElementById('body').scrollTop; 
+       contentbody.className = 'nonscroll'; 
+       document.getElementsByTagName('body')[0].className = 'nonscroll'; 
+       document.getElementsByTagName('html')[0].className = 'nonscroll'; 
+       window.onresize = doResize; 
+       doResize(); 
+       if (contentbody.scrollTo) { contentbody.scrollTo(aTop,0); }
+      } 
+   }
+   // Only initialize if CHM is not trying to print 
+   $(document).ready(function() {
+   var lastSlashPos = document.URL.lastIndexOf("/") > document.URL.lastIndexOf("\\") ? document.URL.lastIndexOf("/") : document.URL.lastIndexOf("\\");
+   if( document.URL.substring( lastSlashPos + 1, lastSlashPos + 4 ).toLowerCase() != "~hh" )
+   {
+    nsrInit();
+    }
+   });
+</script>
+ 
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "opis-funkcji-integrum.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<!-- Topic Header --> 
+<div id="idheader">
+<table style="width:100%; border-bottom: 5px solid #F4C700; border-spacing:0px; padding:5px; background:#4C4C4C">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Description of functions available to INTEGRUM application users</span></h1>
+
+    </td>
+    <td style="text-align:right; width:180px; vertical-align:top">
+     <div id="help-max-close-section" style="float:right;padding-left:10px;width:70px; display:none">
+    <a href="#" id="help-maximize"onmouseover="document.images.maximize.src='b_maximize_yellow.png'" onmouseout="document.images.maximize.src='b_maximize_silver.png'"> 
+     <img name="maximize" src="b_maximize_silver.png" border="0" alt="Maximize" title="Maximize"></a>&nbsp;
+    <a href="#" id="help-close"onmouseover="document.images.close.src='b_close_yellow.png'" onmouseout="document.images.close.src='b_close_silver.png'"> 
+     <img name="close" src="b_close_silver.png" border="0" alt="Close" title="Close"></a>&nbsp;
+    </div>
+    <div style="float:right; min-width: 97px;">
+     <a href="ekran-role-uzytkownikow.html"onmouseover="document.images.previous.src='b_previous_yellow.png'" onmouseout="document.images.previous.src='b_previous_silver.png'"> 
+     <img name="previous" src="b_previous_silver.png" border="0" alt="Previous" title="Previous"></a>&nbsp;
+     <a href="ekran-powitalny.html"onmouseover="document.images.top.src='b_top_yellow.png'" onmouseout="document.images.top.src='b_top_silver.png'"> 
+     <img name="top" src="b_top_silver.png" border="0" alt="Top" title="Top"></a>&nbsp;
+     <a href="zarzadzanie-rolami-uzytkownika.html"onmouseover="document.images.next.src='b_next_yellow.png'" onmouseout="document.images.next.src='b_next_silver.png'"> 
+     <img name="next" src="b_next_silver.png" border="0" alt="Next" title="Next"></a>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- Topic Body --> 
+<div id="idcontent"><div id="innerdiv"> 
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Access to dashboard</span><span class="f_opis5"> - the function allows you to access the <a href="ekran-tablica-informacyjna.html" class="topiclink">“Dashboard”</a> screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Operating map items</span><span class="f_opis5"> - the function allows you to operate the items in the <a href="okno-mapa.html" class="topiclink">“Map”</a> window on the <a href="ekran-tablica-informacyjna.html" class="topiclink">“Dashboard”</a> screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Commenting on new events</span><span class="f_opis5"> - if the user has access to the function, the <a href="okno-komentowania.html" class="topiclink">Commenting window</a> is displayed on the <a href="ekran-tablica-informacyjna.html" class="topiclink">“Dashboard”</a> screen to allow you to make comments on new events of alarm or trouble type.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Downloading map editor</span><span class="f_opis5"> - if granted access to the function, the user can download the MAP EDITOR program by using the </span><img alt="mapa_pobierz" width="22" height="22" style="margin:0;width:22px;height:22px;border:none" src="mapa_pobierz.png"/><span class="f_opis5"> button in the <a href="okno-mapa.html" class="topiclink">“Map”</a> window on the <a href="ekran-tablica-informacyjna.html" class="topiclink">“Dashboard”</a> screen.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Viewing events</span><span class="f_opis5"> - the function provides access to the <a href="ekran-zdarzenia.html" class="topiclink">“Event log”</a> screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Adding comments to events</span><span class="f_opis5"> - the function allows you to add comments to the events displayed on the <a href="ekran-zdarzenia.html" class="topiclink">“Event log”</a> screen and in the <a href="okno-zdarzenia.html" class="topiclink">“Events”</a> windows on the <a href="ekran-tablica-informacyjna.html" class="topiclink">“Dashboard”</a> screen.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Viewing INTEGRA control panels</span><span class="f_opis5"> - the function provides access to the <a href="ekran_centrale.html" class="topiclink">“Control panels”</a> screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Adding INTEGRA control panels</span><span class="f_opis5"> - the function allows adding control panels to the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Editing INTEGRA control panels</span><span class="f_opis5"> - the function allows you to edit settings of the INTEGRA control panels registered in the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Deleting INTEGRA control panels</span><span class="f_opis5"> - the function allows removing control panels from the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Operating INTEGRA control panels</span><span class="f_opis5"> - the function allows you to operate control panels registered in the INTEGRUM system.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Exporting INTEGRA control panels</span><span class="f_opis5"> - the function allows exporting the list of control panels to CSV file.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Configuration supervision</span><span class="f_opis5"> - the function allows access to the <a href="ekran-z-danymi-centrali.html#kontrola-konfiguracji" class="topiclink">“Configuration supervision”</a> tab on the screen with alarm control panel data.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Viewing INTEGRA users</span><span class="f_opis5"> - the function allows access to the <a href="ekran-z-danymi-centrali.html#uzytkownicy" class="topiclink">“Users”</a> tab on the screen with alarm control panel data.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Adding INTEGRA users</span><span class="f_opis5"> - the function allows adding users to the alarm control panels.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Editing INTEGRA users</span><span class="f_opis5"> - the function allows you to edit users of the alarm control panels.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Granting rights without using schedules</span><span class="f_opis5"> - the function allows editing the type and rights of the control panel users (without using the user schedules).</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Deleting INTEGRA users</span><span class="f_opis5"> - the function allows removing users from the alarm control panels.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Viewing INTEGRUM users</span><span class="f_opis5"> - the function allows access to the <a href="ekran_uzytkownicy.html" class="topiclink">“Users”</a> screen.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Adding INTEGRUM users</span><span class="f_opis5"> - the function allows you to add INTEGRUM users.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Editing INTEGRUM users</span><span class="f_opis5"> - the function allows you to edit INTEGRUM users.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Deleting INTEGRUM users</span><span class="f_opis5"> - the function allows you to delete INTEGRUM users.</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Managing application access</span><span class="f_opis5"> - the function allows you to manage access to the INTEGRUM application.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Managing INTEGRA user schedules</span><span class="f_opis5"> - the function allows you to access the <a href="ekran-szablony-uzytkownikow.html" class="topiclink">“User schedules”</a> screen, manage the user schedules and use the schedule when adding and editing the alarm control panel users.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Managing licenses</span><span class="f_opis5"> - the function allows managing licenses on the <a href="ekran-status.html" class="topiclink">“Status”</a> screen.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Managing regions</span><span class="f_opis5"> - the function allows access to the <a href="ekran-ustawienia-regionu.html" class="topiclink">“Region settings”</a> screen.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+<p class="p_opis5"><span class="f_opis5" style="font-weight: bold;">Managing roles</span><span class="f_opis5"> - the function allows you to access the <a href="ekran-role-uzytkownikow.html" class="topiclink">“User roles”</a> screen and manage the user roles.</span></p>
+<p class="p_opis"><span class="f_opis">&nbsp;</span></p>
+ 
+</div></div> 
+</body>
+</html>

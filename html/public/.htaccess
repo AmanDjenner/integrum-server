@@ -1,0 +1,25 @@
+<FilesMatch ".+\.(js|woff|css|mp3)$">
+Header add "Cache-Control" "max-age=604800"
+Header add "Expires" "2214-01-01 13:36:46 -0200"
+Header set "Last-Modified" "Thu, 10 Apr 2014 17:19:27 GMT"
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteRule "^maps/maps-web-service/webregisterstatelistener/(.*)$"  "ws://127.0.0.1:28080/maps-web-service/webregisterstatelistener/$1"	  [P]
+#    RewriteRule    "^maps/maps-web-service/webget(.*)$"  "http://127.0.0.1:28080/maps-web-service/webget$1"  [P]	# html interface only 
+    RewriteRule    "^maps/maps-web-service/(.*)$"  "http://127.0.0.1:28080/maps-web-service/$1"  [P]
+    RewriteRule    "^maps-web-service/(.*)$"  "http://127.0.0.1:28080/maps-web-service/$1"  [P]
+    RewriteRule    "^integrum/integrumservices/(.*)$"  "ws://127.0.0.1:28080/integrumservices/$1"  [P]
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

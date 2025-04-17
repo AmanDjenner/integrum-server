@@ -1,0 +1,21 @@
+.ol-viewport.UNI-MAP * {background-color: green; border:none;}
+.UNI-MAP .layerIcon {
+	font: normal normal normal 14px/1 "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.UNI-MAP .layerIcon:before {
+	content: "\f279";
+}
+#layerFeatureInfo li.UNI-MAP:before {
+    content: "\f279";
+}
+
+#popup-content div.feature-title.UNI-MAP:before {
+    font: normal normal normal 14px/1 "Font Awesome 5 Free";
+	content: "\f279";
+    margin-right:3px;
+}
